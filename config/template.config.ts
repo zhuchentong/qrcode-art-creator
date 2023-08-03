@@ -151,7 +151,7 @@ export const templates = [{
   sd_options: {
     cfg_scale: 7,
     seed: -1,
-    prompt: 'best quality,masterpiece,depth of field,1girl,prospect,a huge castle,the setting sun,illumination,balcony,bright,setting sun,the sun,lateral face,the boundary between the top and bottom of the screen,',
+    prompt: 'best quality,masterpiece,depth of field,1girl,morning,sunlight,dickey,tree,flower,garden,take a walk,water,grass green color,the sun,sunlight in the upper left corner,flying birds,the bright sun,',
     negative_prompt: 'nsfw, low quality, cropped, monochrome, lowres, low saturation, jpeg artifacts, watermark, white letters, skin spots, acnes, skin blemishes, age spot, mutated hands, mutated fingers, deformed, bad anatomy, disfigured, poorly drawn face, extra limb, ugly, poorly drawn hands, missing limb, floating limbs, disconnected limbs, out of focus, long neck, long body, extra fingers, fewer fingers, multi nipples, bad hands, signature, username, bad feet, blurry, bad body',
     sampler_name: 'DPM++ 2M SDE Karras',
     steps: 50,
