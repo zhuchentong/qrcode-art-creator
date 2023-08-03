@@ -8,8 +8,8 @@ export const templates = [{
     negative_prompt: 'NSFW, nude, bad-hands-5, bad-picture-chill-75v, badhandv4, easynegative, ng_deepnegative_v1_75t, verybadimagenegative_v1.3, bhands-neg, watermark, character watermark, photo date watermark, Date watermarking',
     sampler_name: 'DPM++ 2M SDE Karras',
     steps: 50,
-    width: 1024,
-    height: 1024,
+    width: 768,
+    height: 768,
     alwayson_scripts: {
       ADetailer: {
         args: [
@@ -58,12 +58,12 @@ export const templates = [{
   sd_options: {
     cfg_scale: 7,
     seed: -1,
-    prompt: 'upper body, (best quality), (masterpiece), (solo), 1girl, block hair, brown eyed, medium length hair, blue dress, grass, flowers, lake, trees, mountains, sunny, sunlight,  looking at viewer<lora:sophie_hatter:1>, grassland,distant view，',
+    prompt: 'upper body, (best quality), (masterpiece), (solo), 1girl, block hair, brown eyed, medium length hair, blue dress, grass, flowers, lake, trees, mountains, sunny, sunlight,  looking at viewer, grassland,distant view，',
     negative_prompt: 'EasyNegative, badhandv4, (worst quality, low quality:1.4), greyscale, border, artist name, out of frame, zombie',
     sampler_name: 'DPM++ 2M SDE Karras',
     steps: 50,
-    width: 1024,
-    height: 1024,
+    width: 768,
+    height: 768,
     alwayson_scripts: {
       ADetailer: {
         args: [
@@ -116,8 +116,8 @@ export const templates = [{
     negative_prompt: 'nsfw, low quality, cropped, monochrome, lowres, low saturation, jpeg artifacts, watermark, white letters, skin spots, acnes, skin blemishes, age spot, mutated hands, mutated fingers, deformed, bad anatomy, disfigured, poorly drawn face, extra limb, ugly, poorly drawn hands, missing limb, floating limbs, disconnected limbs, out of focus, long neck, long body, extra fingers, fewer fingers, multi nipples, bad hands, signature, username, bad feet, blurry, bad body',
     sampler_name: 'DPM++ 2M SDE Karras',
     steps: 50,
-    width: 1024,
-    height: 1024,
+    width: 768,
+    height: 768,
     alwayson_scripts: {
       ADetailer: {
         args: [
@@ -170,8 +170,8 @@ export const templates = [{
     negative_prompt: 'nsfw, low quality, cropped, monochrome, lowres, low saturation, jpeg artifacts, watermark, white letters, skin spots, acnes, skin blemishes, age spot, mutated hands, mutated fingers, deformed, bad anatomy, disfigured, poorly drawn face, extra limb, ugly, poorly drawn hands, missing limb, floating limbs, disconnected limbs, out of focus, long neck, long body, extra fingers, fewer fingers, multi nipples, bad hands, signature, username, bad feet, blurry, bad body',
     sampler_name: 'DPM++ 2M SDE Karras',
     steps: 50,
-    width: 1024,
-    height: 1024,
+    width: 768,
+    height: 768,
     alwayson_scripts: {
       ADetailer: {
         args: [
