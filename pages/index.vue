@@ -75,6 +75,9 @@
   &.active{
     border-color: rgba(14,165,233,var(--un-border-opacity));
   }
+  img{
+    -webkit-user-drag: none;
+  }
 }
 </style>
 
