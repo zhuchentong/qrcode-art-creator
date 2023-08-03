@@ -147,7 +147,7 @@ export const templates = [{
   },
 }, {
   image: '/templates/template_4.jpg',
-  title: '早晨',
+  title: '清晨',
   sd_options: {
     cfg_scale: 7,
     seed: -1,
