@@ -163,7 +163,6 @@ export const templates = [{
           true,
           {
             ad_model: 'person_yolov8n-seg.pt',
-            ad_mask_blur: -4,
           },
         ],
       },
