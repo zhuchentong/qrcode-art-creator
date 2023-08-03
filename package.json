@@ -39,6 +39,7 @@
     "@vueuse/core": "^10.2.1",
     "delaunator": "^5.0.0",
     "pinia": "^2.1.4",
+    "qrcode-decoder": "^0.3.3",
     "seedrandom": "^3.0.5",
     "stable-diffusion-api": "^0.0.7",
     "stackblur-canvas": "^2.6.0"

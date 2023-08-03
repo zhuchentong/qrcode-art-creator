@@ -7,12 +7,12 @@
           <div>
             <ElSwitch
               v-model="qrcodeInputMethod"
-              active-text="文字"
-              active-value="text"
-              inactive-text="图片"
-              inactive-value="image"
+              active-text="图片"
+              active-value="image"
+              inactive-text="文字"
+              inactive-value="text"
               size="small"
-              style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+              style="--el-switch-on-color: #ff4949; --el-switch-off-color: #13ce66"
             />
           </div>
         </div>
@@ -29,7 +29,7 @@
           css:border="~ gray dashed"
           :show-file-list="false"
         >
-          <img v-if="qrcodeInputImages.length" class="w-full h-auto" :src="qrcodeInputImageURL">
+          <img v-if="qrcodeInputImages.length" class="w-[80%] h-auto" :src="qrcodeInputImageURL">
           <div v-else class="i-icon-park-outline:plus text-[40px]" />
         </ElUpload>
       </div>
@@ -37,14 +37,15 @@
     <ElCard header="选择款式">
       <el-row :gutter="20">
         <el-col
-          v-for="template in templates"
-          :key="template.image"
+          v-for="(template, index) in templates"
+          :key="index"
+          class="my-5"
           :span="12"
           @click="() => activeTemplate = template"
         >
           <div
             class="template-item p-2 rounded-xl"
-            :class="{ active: activeTemplate?.image === template.image }"
+            :class="{ active: activeTemplate?.title === template.title }"
             css:border="~-2  gray-200 solid"
           >
             <img class="w-full" :src="template.image">
@@ -61,7 +62,7 @@
       </ElButton>
     </div>
     <div v-if="qrcodeResult" header="二维码">
-      <div class="flex-center">
+      <div class="flex-center mb-10">
         <img class="w-[80%]" :src="`data:image/png;base64,${qrcodeResult}`">
       </div>
     </div>
@@ -78,6 +79,7 @@
 </style>
 
 <script setup lang="ts">
+import QrcodeDecoder from 'qrcode-decoder'
 import seedrandom from 'seedrandom'
 import type { MarkerInnerShapes, MarkerShapes, PixelStyles } from 'config/constants.config'
 import Perspective from '@/utils/perspective'
@@ -1131,7 +1133,7 @@ function generateBase64FromText() {
   return generateQrcodeByText(qrcodeInputText)
 }
 
-function generateBase64FromImage() {
+async function generateBase64FromImage() {
   if (!qrcodeInputImageURL.value) {
     ElMessage({
       message: '请输入需要生成二维码的图片',
@@ -1148,6 +1150,19 @@ function generateBase64FromImage() {
     reader.onerror = reject
   })
 
-  return toBase64(qrcodeInputImages[0].raw)
+  const base64Str = await toBase64(qrcodeInputImages[0].raw)
+
+  const qrcodeDecorder = new QrcodeDecoder()
+
+  return new Promise<string>((resolve) => {
+    const img = new Image()
+    img.src = base64Str
+    img.onload = () => {
+      qrcodeDecorder.decodeFromImage(img).then(async (res) => {
+        const qrcodeBase64 = await generateQrcodeByText(res.data)
+        resolve(qrcodeBase64)
+      })
+    }
+  })
 }
 </script>
